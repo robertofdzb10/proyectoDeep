@@ -55,7 +55,7 @@ proyectoDeep/
    ```bash
    git clone https://github.com/robertofdzb10/proyectoDeep.git
    cd proyectoDeep
-````
+   ````
 
 2. **Crea y activa un entorno virtual (venv)**
 
@@ -64,7 +64,6 @@ proyectoDeep/
    . venv/Scripts/activate    # Windows PowerShell
    source venv/bin/activate   # macOS / Linux
    ```
-````
 
 3. **Instala dependencias**
 

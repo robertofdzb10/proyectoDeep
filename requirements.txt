@@ -3,3 +3,12 @@ uvicorn
 torch>=2.0
 pandas
 pydantic
+requests
+httpx
+pyarrow
+langchain
+langchain_community
+langchain-openai
+langchain-core
+rapidfuzz 
+python-dotenv

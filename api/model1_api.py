@@ -26,29 +26,6 @@ STEPS = cfg1.get("time_steps")
 def root():
     return {"status": "ok", "model": "Modelo 1", "device": str(model1.device)}
 
-@app.post("/predict")
-def predict1(req: PredictRequestModel1):
-    try:
-        # convertir listas a tensores
-        seq_l = torch.tensor(req.seq_loc, dtype=torch.float32).unsqueeze(0).to(model1.device)
-        seq_v = torch.tensor(req.seq_vis, dtype=torch.float32).unsqueeze(0).to(model1.device)
-        idx_l = torch.tensor([req.idx_loc], dtype=torch.long).to(model1.device)
-        idx_v = torch.tensor([req.idx_vis], dtype=torch.long).to(model1.device)
-
-        with torch.no_grad():
-            logits = model1(seq_l.unsqueeze(-1).unsqueeze(-1),
-                            seq_v.unsqueeze(-1).unsqueeze(-1),
-                            idx_l, idx_v)
-            probs = torch.softmax(logits, dim=1).cpu().numpy().flatten()
-
-        return {
-            "visitor": float(probs[0]),
-            "local":   float(probs[1]),
-            "confidence": float(probs.max())
-        }
-    except Exception as e:
-        raise HTTPException(400, str(e))
-
 @app.post("/match_predict")
 def match_predict1(req: MatchRequest):
     try:

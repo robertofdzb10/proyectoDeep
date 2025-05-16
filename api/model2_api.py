@@ -49,40 +49,6 @@ app = FastAPI(title="Modelo 2 – API", version="1.0")
 def root():
     return {"status": "ok", "model": "Modelo 2", "device": str(DEVICE)}
 
-# ---------- endpoint bajo nivel: tensores explícitos ----------------
-@app.post("/predict")
-def predict(req: PredictRequestModel2):
-    try:
-        # a Tensores y al mismo dispositivo que el modelo
-        seq_l = torch.tensor(req.seq_loc, dtype=torch.float32).unsqueeze(0).to(DEVICE)
-        seq_v = torch.tensor(req.seq_vis, dtype=torch.float32).unsqueeze(0).to(DEVICE)
-        idx_l = torch.tensor([req.idx_loc], dtype=torch.long).to(DEVICE)
-        idx_v = torch.tensor([req.idx_vis], dtype=torch.long).to(DEVICE)
-        idx_r = torch.tensor([req.idx_ref], dtype=torch.long).to(DEVICE)
-        idx_c = torch.tensor([req.idx_cmp], dtype=torch.long).to(DEVICE)
-        lp    = torch.tensor([req.lineup_loc], dtype=torch.long).to(DEVICE)
-        vp    = torch.tensor([req.lineup_vis], dtype=torch.long).to(DEVICE)
-        odds  = torch.tensor([req.odds], dtype=torch.float32).to(DEVICE)
-
-        with torch.no_grad():
-            logits = model2(
-                seq_l, seq_v,
-                idx_l, idx_v,
-                idx_r, idx_c,
-                lp, vp,
-                odds,
-            )
-            probs = torch.softmax(logits, dim=1).cpu().numpy().flatten()
-
-        return {
-            "visitor":   float(probs[0]),
-            "local":     float(probs[1]),
-            "draw":      float(probs[2]),
-            "confidence": float(probs.max()),
-        }
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
 # ---------- endpoint alto nivel: nombres / cuotas / fecha -----------
 @app.post("/match_predict")
 def match_predict(req: MatchRequest):

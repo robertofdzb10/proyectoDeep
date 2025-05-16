@@ -64,6 +64,7 @@ proyectoDeep/
    . venv/Scripts/activate    # Windows PowerShell
    source venv/bin/activate   # macOS / Linux
    ```
+````
 
 3. **Instala dependencias**
 

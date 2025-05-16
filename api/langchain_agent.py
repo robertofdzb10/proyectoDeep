@@ -1,17 +1,31 @@
 # api/langchain_agent.py
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from agents.agent import football_agent, chat_with_agent
 
-class ChatRequest(BaseModel):
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from agents.agent import chat_with_agent
+
+app = FastAPI(title="LangChain Agent API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class AgentRequest(BaseModel):
     input: str
 
-app = FastAPI(title="Football LangChain Agent")
+@app.get("/")
+def root():
+    return {"status": "ok", "agent": "LangChain Football Agent"}
 
-@app.post("/chat")
-async def chat(req: ChatRequest):
+@app.post("/predict")
+def predict(req: AgentRequest):
+    # Llamamos a tu función que invoca al agente
     try:
-        resp = chat_with_agent(req.input, agent_executor=football_agent)
-        return {"response": resp}
+        reply = chat_with_agent(req.input)
+        return {"response": reply}
     except Exception as e:
-        raise HTTPException(500, detail=str(e))
+        return {"error": str(e)}

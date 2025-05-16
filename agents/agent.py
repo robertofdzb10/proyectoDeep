@@ -7,6 +7,7 @@ from typing import Dict, List, Optional, Tuple, Any
 from rapidfuzz import process, fuzz
 from dotenv import load_dotenv
 import os
+from datetime import date
 
 # Importaciones de LangChain
 from langchain_core.tools import tool
@@ -15,9 +16,12 @@ from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain.memory import ConversationBufferMemory
+from langchain_core.callbacks import CallbackManager, StdOutCallbackHandler
 
 # carga variables de .env
 load_dotenv()  
+
+ROUTER_URL = "http://localhost:8002/predict"   # ← endpoint del router
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
@@ -185,70 +189,6 @@ def select_model(entities: Dict[str, Any]) -> str:
         return "model1"
 
 # --------------------------
-# Simulación de APIs de modelos
-# --------------------------
-
-def simulate_model1_api(local_team: str, visitor_team: str, **kwargs) -> Dict[str, Any]:
-    """
-    Simula una respuesta de la API del modelo 1 para pruebas.
-    """
-    import random
-
-    # Generar probabilidades aleatorias
-    prob_local = round(random.uniform(0.3, 0.7), 2)
-    prob_visitor = round(1 - prob_local, 2)
-
-    # Determinar ganador
-    if prob_local > prob_visitor:
-        winner = "local"
-    else:
-        winner = "visitor"
-
-    return {
-        "winner": winner,
-        "prob_local": prob_local,
-        "prob_visitor": prob_visitor,
-        "confidence": max(prob_local, prob_visitor)
-    }
-
-def simulate_model5_api(
-    local_team: str,
-    visitor_team: str,
-    local_players: List[str],
-    visitor_players: List[str],
-    **kwargs
-) -> Dict[str, Any]:
-    """
-    Simula una respuesta de la API del modelo 5 para pruebas.
-    """
-    import random
-
-    # Generar probabilidades aleatorias que sumen 1
-    prob_local = round(random.uniform(0.2, 0.5), 2)
-    prob_visitor = round(random.uniform(0.2, 0.5), 2)
-    prob_draw = round(1 - prob_local - prob_visitor, 2)
-
-    # Ajustar si la suma no es exactamente 1 debido a redondeo
-    if prob_local + prob_visitor + prob_draw != 1.0:
-        prob_draw = round(1.0 - prob_local - prob_visitor, 2)
-
-    # Determinar resultado más probable
-    probs = {
-        local_team.title(): prob_local,
-        visitor_team.title(): prob_visitor,
-        "Empate": prob_draw
-    }
-    winner = max(probs, key=probs.get)
-
-    return {
-        "winner": winner,
-        "prob_local": prob_local,
-        "prob_visitor": prob_visitor,
-        "prob_draw": prob_draw,
-        "confidence": probs[winner]
-    }
-
-# --------------------------
 # Formateo de respuestas
 # --------------------------
 
@@ -361,64 +301,62 @@ def format_model5_response(
 def predict_match_result(match_input: str) -> str:
     """
     Predice el resultado de un partido de fútbol basado en la información proporcionada.
-
-    Args:
-        match_input: Texto con información sobre el partido (equipos, jugadores, etc.)
-
-    Returns:
-        Predicción del resultado del partido
     """
     try:
-        # Extraer entidades del texto
+        # --- 1. Extraer entidades del texto ---
         entities = extract_all_entities(match_input)
 
-        # Verificar si tenemos los equipos básicos
+        # Asegurarse de que tenemos los dos equipos
         if not entities["local_team"] or not entities["visitor_team"]:
-            return "No pude identificar claramente los equipos en tu mensaje. Por favor, menciona los nombres de los equipos que jugarán el partido."
+            return ("No pude identificar claramente los equipos en tu mensaje. "
+                    "Por favor, menciona los nombres de los dos equipos que jugarán.")
 
-        # Seleccionar modelo según las entidades extraídas
-        model_type = select_model(entities)
+        # --- 2. Construir payload para el router ---
+        payload = {
+            "local":   entities["local_team"].title(),
+            "visitor": entities["visitor_team"].title(),
+            # Si el usuario no dio fecha, ponemos hoy para que cumpla el esquema
+            "date":    entities["match_date"] or date.today().isoformat(),
+            "referee": entities["referee"],
+            "competition": entities["competition"],
+            "local_players": entities["local_players"],
+            "visitor_players": entities["visitor_players"],
+            "cuota_1": entities["cuota_1"],
+            "cuota_x": entities["cuota_x"],
+            "cuota_2": entities["cuota_2"],
+        }
+        # Quitar claves vacías / None
+        payload = {k: v for k, v in payload.items() if v not in (None, [], "")}
 
-        # Llamar a la API correspondiente (simulada para este ejemplo)
-        if model_type == "model1":
-            response = simulate_model1_api(
-                local_team=entities["local_team"],
-                visitor_team=entities["visitor_team"],
-                match_date=entities["match_date"]
-            )
+        # --- 3. Llamar al router ---
+        print("🔍 [DEBUG] Enviando a router payload:", json.dumps(payload, ensure_ascii=False))
+        resp = requests.post(ROUTER_URL, json=payload, timeout=10)
+        resp.raise_for_status()
+        model_resp = resp.json()
+        print("🔍 [DEBUG] Router respondió:", model_resp)
+ 
 
-            # Formatear respuesta para modelo 1
+        # Saber qué modelo respondió
+        routed_to = model_resp.pop("routed_to", "unknown")
+        print(f"🔍 [DEBUG] Routed to → {routed_to}")
+ 
+         # --- 4. Formatear la respuesta según el modelo ---
+        if routed_to.startswith("model1"):
             return format_model1_response(
-                response=response,
-                local_team=entities["local_team"],
-                visitor_team=entities["visitor_team"]
-            )
-
-        else:  # model5
-            response = simulate_model5_api(
+                response=model_resp,
                 local_team=entities["local_team"],
                 visitor_team=entities["visitor_team"],
-                local_players=entities["local_players"],
-                visitor_players=entities["visitor_players"],
-                referee=entities["referee"],
-                competition=entities["competition"],
-                match_date=entities["match_date"],
-                cuota_1=entities["cuota_1"],
-                cuota_x=entities["cuota_x"],
-                cuota_2=entities["cuota_2"]
             )
-
-            # Formatear respuesta para modelo 5
+        else:  # model2 / model5
             return format_model5_response(
-                response=response,
+                response=model_resp,
                 local_team=entities["local_team"],
                 visitor_team=entities["visitor_team"],
-                competition=entities["competition"]
+                competition=entities["competition"],
             )
 
     except Exception as e:
-        return f"Lo siento, ha ocurrido un error al procesar tu solicitud: {str(e)}"
-
+        return f"Lo siento, ocurrió un error al procesar tu solicitud: {str(e)}"
 
 # --------------------------
 # Configuración del agente
@@ -428,8 +366,17 @@ def create_football_agent():
     """
     Crea un agente de LangChain para predicción de resultados de fútbol.
     """
-    # Crear el modelo LLM
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.5,  openai_api_key=OPENAI_API_KEY)
+    # Creamos un CallbackManager que vuelca cada mensaje por consola
+    callback_manager = CallbackManager([StdOutCallbackHandler()])
+
+    # Crear el modelo LLM con verbose y nuestro callback para debug
+    llm = ChatOpenAI(
+        model="gpt-4o-mini",
+        temperature=0.5,
+        openai_api_key=OPENAI_API_KEY,
+        verbose=True,
+        callback_manager=callback_manager
+    )
 
     # Definir el prompt del sistema
     prompt = ChatPromptTemplate.from_messages([

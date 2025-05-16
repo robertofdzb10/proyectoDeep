@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat de Predicciones</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --window: #ffffff;
+      --user: #d1e7ff;
+      --bot: #e2e8f0;
+      --text: #333;
+      --accent: #3b82f6;
+      --border: #cbd5e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .chat-container {
+      width: 100%;
+      max-width: 480px;
+      height: 600px;
+      background: var(--window);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+    }
+    .message {
+      margin-bottom: 12px;
+      display: flex;
+    }
+    .message.user { justify-content: flex-end; }
+    .message.bot  { justify-content: flex-start; }
+    .bubble {
+      max-width: 70%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+    .user .bubble {
+      background: var(--user);
+      border-bottom-right-radius: 2px;
+    }
+    .bot .bubble {
+      background: var(--bot);
+      border-bottom-left-radius: 2px;
+    }
+    .input-area {
+      border-top: 1px solid var(--border);
+      padding: 12px;
+      display: flex;
+    }
+    .input-area input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .input-area button {
+      margin-left: 8px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .input-area button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="messages" id="messages"></div>
+  <div class="input-area">
+    <input type="text" id="user-input" placeholder="Escribe tu mensaje..." autocomplete="off" />
+    <button id="send-btn">Enviar</button>
+  </div>
+</div>
+
+<script>
+  const messagesEl = document.getElementById('messages');
+  const inputEl    = document.getElementById('user-input');
+  const btnEl      = document.getElementById('send-btn');
+  const API_URL    = 'http://localhost:8003/predict';
+
+  function appendMessage(text, sender='bot') {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('message', sender);
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    bubble.textContent = text;
+    wrapper.appendChild(bubble);
+    messagesEl.appendChild(wrapper);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const text = inputEl.value.trim();
+    if (!text) return;
+    appendMessage(text, 'user');
+    inputEl.value = '';
+    btnEl.disabled = true;
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json' },
+        body: JSON.stringify({ input: text })
+      });
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      const { response, error } = await res.json();
+      if (error) {
+        appendMessage('Error: ' + error);
+      } else {
+        appendMessage(response);
+      }
+    } catch (err) {
+      appendMessage('No se pudo conectar al servidor.');
+      console.error(err);
+    } finally {
+      btnEl.disabled = false;
+      inputEl.focus();
+    }
+  }
+
+  btnEl.addEventListener('click', sendMessage);
+  inputEl.addEventListener('keyup', e => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  // Mensaje de bienvenida
+  appendMessage('¡Hola! Soy tu asistente de predicciones de fútbol. ¿En qué puedo ayudarte hoy?');
+</script>
+
+</body>
+</html>

@@ -28,6 +28,7 @@ async def route_predict(request: Request):
                 resp = await client.post(f"{MODEL1_URL}/match_predict", json=req.dict())
             resp.raise_for_status()
             data = resp.json()
+            print("🔄 [DEBUG] Model 1 /predict returned:", data)
             data["routed_to"] = "model1_high"
             return data
         except Exception as e:
@@ -41,6 +42,7 @@ async def route_predict(request: Request):
             resp = await client.post(f"{MODEL2_URL}/match_predict", json=req2.dict())
         resp.raise_for_status()
         data = resp.json()
+        print("🔄 [DEBUG] Model 2 /predict returned:", data)
         data["routed_to"] = "model2_high"
         return data
     except Exception:

@@ -1,0 +1,705 @@
+jugador,id,equipo
+Mariño,14000,Almería
+Pozo,84014,Rayo Vallecano
+Edgar,23105,Almería
+Babić,22194,Almería
+Akieme,20049,Almería
+Baba,23373,Almería
+Robertone,19074,Almería
+Lázaro,30012,Almería
+Ramazani,26997,Almería
+Embarba,15237,Almería
+Luis Suárez,24320,Almería
+Pubill,29707,Almería
+Lopy,40119,Almería
+Melero,202422,Almería
+Marezi,1069089,Almería
+Arribas,27970,Almería
+Fernando,400349,Almería
+Puigmal,40009,Almería
+Gui,46049,Almería
+Chumi,22608,Almería
+Iribarne,205460,Almería
+Kaiky,32898,Almería
+Centelles,23445,Almería
+Dimitrievski,402399,Rayo Vallecano
+Balliu,3793,Rayo Vallecano
+Lejeune,13748,Rayo Vallecano
+Aridane,100312,Rayo Vallecano
+Espino,23739,Rayo Vallecano
+Nteka,21649,Rayo Vallecano
+Óscar Valentín,21514,Rayo Vallecano
+Unai López,202401,Rayo Vallecano
+Trejo,2121,Rayo Vallecano
+Isi,21120,Rayo Vallecano
+Álvaro García,402020,Rayo Vallecano
+Salvi,401011,Rayo Vallecano
+Pathé Ciss,26734,Rayo Vallecano
+Chavarría,20945,Rayo Vallecano
+Méndez,30331,Granada
+Falcao,13729,Rayo Vallecano
+Mumin,17562,Rayo Vallecano
+Jorge Moreno,13132,Osasuna
+Bebé,95465,Rayo Vallecano
+Pablo Muñoz,13378,Rayo Vallecano
+Morro,20687,Rayo Vallecano
+Bono,101861,Sevilla
+Jesús Navas,1251,Sevilla
+Gudelj,78077,Sevilla
+Badé,29431,Sevilla
+Acuña,29160,Sevilla
+Rakitić,8548,Sevilla
+Suso,19975,Sevilla
+Ocampos,82287,Sevilla
+Lamela,97738,Sevilla
+En-Nesyri,20092,Sevilla
+Juanlu,25976,Sevilla
+Sow,26096,Sevilla
+Óliver Torres,19973,Sevilla
+Gattoni,33958,Sevilla
+Dmitrović,20128,Sevilla
+Manu Bueno,201500,Sevilla
+Tecatito Corona,70090,Sevilla
+Montiel,404684,Sevilla
+Papu Gómez,97612,Sevilla
+Rafa Mir,23132,Sevilla
+Jordán,301804,Sevilla
+Pedrosa,23300,Sevilla
+Mamardashvili,12935,Valencia
+Thierry Correia,22681,Valencia
+Cenk,29636,Valencia
+Diakhaby,28075,Valencia
+Gabriel Paulista,15211,Atlético de Madrid
+Gayà,301280,Valencia
+Fran Pérez,43144,Valencia
+André Almeida,23702,Valencia
+Pepelu,23179,Valencia
+Diego López,40502,Valencia
+Duro,24700,Valencia
+Vázquez,209359,Cádiz
+Guerra,40604,Valencia
+Foulquier,15258,Valencia
+Gozálbez,27536,Valencia
+Rivero,24581,Valencia
+Doménech,301736,Valencia
+Iranzo,40605,Valencia
+Tárrega,13199,Valencia
+Hugo González,26926,Valencia
+Tejón,208313,Valencia
+Guillamón,23542,Valencia
+Remiro,201983,Real Sociedad
+Traoré,84553,Real Sociedad
+Zubeldia,22240,Real Sociedad
+Le Normand,22404,Real Sociedad
+Aihen Muñoz,22578,Real Sociedad
+Turrientes,43069,Real Sociedad
+Zubimendi,22483,Real Sociedad
+Brais Méndez,21041,Real Sociedad
+Oyarzabal,22053,Real Sociedad
+Kubo,26515,Real Sociedad
+Carlos Fernández,402482,Real Sociedad
+Álex Sola,22472,Alavés
+Cho,28737,Real Sociedad
+Olasagasti,25964,Real Sociedad
+Barrenetxea,22759,Real Sociedad
+Sadiq,27094,Real Sociedad
+Marín,13160,Real Sociedad
+Diego Rico,301310,Getafe
+Navarro,26732,Cádiz
+Karrikaburu,206629,Alavés
+Pacheco,23755,Real Sociedad
+Marrero,27698,Real Sociedad
+González de Zárate,15074,Real Sociedad
+Gazzaniga,95715,Girona
+Arnau,15099,Girona
+Yan Couto,19835,Girona
+David López,300554,Girona
+Blind,84024,Girona
+Miguel Gutiérrez,304051,Girona
+Herrera,201971,Osasuna
+Aleix García,302245,Girona
+Sávio,30114,Girona
+Tsygankov,1049633,Girona
+Stuani,12663,Girona
+Pablo Torre,43083,Girona
+Bernardo,6287,Girona
+Iván Martín,20955,Girona
+Dovbyk,1049632,Girona
+Valery,20948,Girona
+Selvi,13639,Girona
+Juan Carlos,101023,Girona
+Juanpe,9371,Girona
+Almena,13638,Girona
+Manu Vallejo,24250,Girona
+Fuidias,26769,Girona
+Valles,24097,Las Palmas
+Álex Suárez,24680,Las Palmas
+Lemos,21038,Las Palmas
+Coco,19268,Las Palmas
+Sinkgraven,78014,Las Palmas
+Kirian,24833,Las Palmas
+Loiodice,28373,Las Palmas
+Javi Muñoz,22038,Las Palmas
+Jonathan Viera,200272,Almería
+Cardona,23313,Las Palmas
+Sandro,16775,Las Palmas
+Mfulu,82609,Las Palmas
+Munir,16773,Las Palmas
+Mika Mármol,304040,Las Palmas
+Herzog,13637,Las Palmas
+Pejiño,25416,Las Palmas
+Araujo,13636,Las Palmas
+Benito,202378,Las Palmas
+Aarón,15222,Las Palmas
+Curbelo,22238,Las Palmas
+Cristian Herrera,302204,Las Palmas
+Iñaki,205854,Las Palmas
+Rajković,25705,Mallorca
+Gio González,13279,Mallorca
+Maffeo,301806,Mallorca
+Copete,24644,Mallorca
+Valjent,20741,Mallorca
+Jaume Costa,12615,Mallorca
+Morlanes,23365,Mallorca
+Mascarell,101267,Mallorca
+Dani Rodríguez,100293,Mallorca
+Amath,20066,Mallorca
+Muriqi,28512,Mallorca
+Darder,15228,Mallorca
+Raillo,401446,Mallorca
+Samú Costa,27821,Mallorca
+Llabrés,13266,Mallorca
+Larin,43792,Mallorca
+Quintanilla,403746,Mallorca
+Pere Joan,24649,Mallorca
+Lato,302283,Mallorca
+Abdón Prats,301113,Mallorca
+Greif,40777,Mallorca
+Antonio Sánchez,20889,Mallorca
+Van der Heyden,46105,Mallorca
+Unai Simón,22117,Athletic Club
+De Marcos,9277,Athletic Club
+Paredes,20796,Athletic Club
+Vivian,22519,Athletic Club
+Lekue,202398,Athletic Club
+Muniain,12441,Athletic Club
+Unai Gómez,110668,Athletic Club
+Vesga,16832,Athletic Club
+Ruiz de Galarreta,13763,Athletic Club
+Nico Williams,43075,Athletic Club
+Williams,202397,Athletic Club
+Imanol,26442,Athletic Club
+Ander Herrera,9438,Athletic Club
+Sancet,20793,Athletic Club
+Guruzeta,20178,Athletic Club
+Berenguer,19025,Athletic Club
+Agirrezabala,26897,Athletic Club
+Martón,43047,Athletic Club
+Villalibre,22162,Athletic Club
+Raúl García,2294,Athletic Club
+Prados,304036,Athletic Club
+Adu Ares,204337,Athletic Club
+Nolaskoain,22335,Athletic Club
+Lunin,20659,Real Madrid
+Carvajal,101005,Real Madrid
+Militão,20583,Real Madrid
+Alaba,93161,Real Madrid
+Fran García,28183,Real Madrid
+Bellingham,29482,Real Madrid
+Camavinga,22869,Real Madrid
+Tchouaméni,28344,Real Madrid
+Valverde,22396,Real Madrid
+Rodrygo,25618,Real Madrid
+Vinícius,20660,Real Madrid
+Rüdiger,93402,Real Madrid
+Kroos,92802,Real Madrid
+Modrić,18002,Real Madrid
+Joselu,9301,Real Madrid
+Cañizares,27989,Real Madrid
+Odriozola,202439,Real Sociedad
+Fran González,13507,Real Madrid
+Lucas Vázquez,101266,Real Madrid
+Nacho,200113,Real Madrid
+Brahim Díaz,25251,Real Madrid
+Iván Villar,102347,Celta de Vigo
+Mingueza,20977,Celta de Vigo
+Aidoo,25612,Celta de Vigo
+Nuñez,22336,Celta de Vigo
+Sotelo,12820,Celta de Vigo
+Cervi,29002,Celta de Vigo
+Fran Beltrán,20079,Celta de Vigo
+Bamba,82309,Celta de Vigo
+Iago Aspas,6326,Celta de Vigo
+Carles Pérez,23230,Celta de Vigo
+Strand Larsen,28810,Celta de Vigo
+Manu Sánchez,22773,Celta de Vigo
+De la Torre,20482,Celta de Vigo
+Miguel,27601,Celta de Vigo
+Swedberg,45101,Celta de Vigo
+Veiga,26424,Celta de Vigo
+Coke,23599,Celta de Vigo
+Starfelt,48736,Celta de Vigo
+Kevin Vázquez,100426,Celta de Vigo
+Domínguez,43007,Celta de Vigo
+Tapia,78168,Celta de Vigo
+Dotor,26870,Celta de Vigo
+Paciência,70504,Celta de Vigo
+Catena,22401,Osasuna
+David García,201018,Osasuna
+Mojica,15239,Osasuna
+Moi Gómez,8678,Osasuna
+Aimar,23928,Osasuna
+Moncayola,22606,Osasuna
+Torró,8752,Osasuna
+Rubén García,301767,Osasuna
+Rubén Peña,18046,Osasuna
+Budimir,27214,Osasuna
+Arnaiz,21154,Osasuna
+Iker Muñoz,27496,Osasuna
+Areso,22545,Osasuna
+Ibáñez,43090,Osasuna
+Chimy Ávila,21481,Betis
+Aitor Fernández,201045,Osasuna
+Valencia,26774,Osasuna
+Nacho Vidal,302292,Mallorca
+Juan Cruz,86177,Osasuna
+Unai García,201317,Osasuna
+Herrando,22669,Osasuna
+Javi Martínez,21427,Osasuna
+Jörgensen,43154,Villarreal
+Foyth,25374,Villarreal
+Mandi,82607,Villarreal
+Cuenca,24508,Villarreal
+Alberto Moreno,7010,Villarreal
+Álex Baena,304049,Villarreal
+Terrats,15143,Villarreal
+Parejo,6164,Villarreal
+Comesaña,21187,Villarreal
+Gerard Moreno,8675,Villarreal
+Sørloth,28332,Villarreal
+Pedraza,23095,Villarreal
+Capoue,91017,Villarreal
+Denis Suárez,100420,Villarreal
+Morales,301763,Villarreal
+Reina,1504,Villarreal
+Gabbia,27404,Villarreal
+Albiol,2290,Villarreal
+Kiko Femenía,6268,Villarreal
+Manu Trigueros,200072,Villarreal
+Brereton,11154,Villarreal
+Rui Silva,70320,Betis
+Sabaly,82702,Betis
+Luiz Felipe,27431,Betis
+Pezzella,20033,Betis
+Abner,30360,Betis
+Isco,300520,Betis
+Marc Roca,23013,Betis
+Guido Rodríguez,27658,Betis
+Luiz Henrique,30140,Betis
+Ayoze Pérez,101804,Betis
+Borja Iglesias,102337,Betis
+Paul,22843,Betis
+Ruibal,23106,Betis
+Willian José,15205,Betis
+Guardado,4149,Betis
+Rodri,303958,Betis
+Fran Vieites,21632,Betis
+Miranda,21475,Betis
+Riad,15107,Betis
+David Soria,402491,Getafe
+Damián Suárez,13741,Getafe
+Juan Iglesias,21199,Getafe
+Mitrović,15246,Getafe
+Domingos Duarte,29122,Getafe
+Gastón Álvarez,41998,Getafe
+Djené,19021,Getafe
+Maksimović,20254,Getafe
+Aleñá,23198,Getafe
+Mata,101289,Getafe
+Latasa,304045,Getafe
+Portu,300527,Girona
+Lozano,8750,Almería
+Mayoral,22115,Getafe
+Fuzato,20696,Getafe
+Jorge Benito,13640,Getafe
+Angileri,45278,Getafe
+Gorka,45279,Getafe
+Santi García,43254,Getafe
+Ter Stegen,93292,Barcelona
+Koundé,84324,Barcelona
+Christensen,84094,Barcelona
+Araújo,21908,Barcelona
+Balde,20068,Barcelona
+Gündoğan,93028,Barcelona
+De Jong,78218,Barcelona
+Romeu,300056,Barcelona
+Pedri,25651,Barcelona
+Raphinha,70294,Barcelona
+Lewandowski,93207,Barcelona
+Abde,26976,Betis
+Gavi,11269,Barcelona
+Lamine Yamal,304240,Barcelona
+Ansu Fati,23758,Barcelona
+Astralaga,41836,Barcelona
+Sergi Roberto,300367,Barcelona
+Eric Garcia,304055,Girona
+Casadó,201571,Barcelona
+Ferran Torres,23403,Barcelona
+Fermín,110654,Barcelona
+Ledesma,28767,Cádiz
+Iza,401449,Cádiz
+Fali,301762,Cádiz
+Luis Hernández,200433,Cádiz
+Javi Hernández,24664,Cádiz
+Machís,18052,Cádiz
+Fede San Emeterio,102234,Cádiz
+Iván Alejo,22082,Cádiz
+Alcaraz,301125,Cádiz
+Chris Ramos,24735,Cádiz
+Roger,300529,Cádiz
+Lucas Pires,33050,Cádiz
+Sobrino,7569,Cádiz
+Escalante,20018,Cádiz
+Álex,8567,Cádiz
+Meré,102277,Cádiz
+Negredo,4027,Cádiz
+Osmajić,12954,Cádiz
+David Gil,101852,Cádiz
+José Mari,400345,Cádiz
+Zaldua,201044,Cádiz
+Momo,22631,Cádiz
+De la Rosa,403792,Cádiz
+Sivera,302291,Alavés
+Gorosabel,22358,Alavés
+Rafa Marín,15180,Alavés
+Abqar,20671,Alavés
+Sedlar,25616,Alavés
+Duarte,301809,Alavés
+Guevara,22429,Alavés
+Blanco,23598,Alavés
+Guridi,22049,Alavés
+Rioja,202425,Alavés
+Abde Rebbach,19122,Alavés
+Javi López,26449,Alavés
+Benavídez,45102,Alavés
+Sylla,301810,Alavés
+Kike García,9395,Alavés
+Adrián,27986,Alavés
+Gagua,19100,Alavés
+Joseda,43148,Alavés
+Owono,13161,Alavés
+Maraš,29245,Alavés
+Selu Diallo,403693,Alavés
+Alkain,22648,Alavés
+Oblak,18149,Atlético de Madrid
+Hermoso,20150,Atlético de Madrid
+Savić,95524,Atlético de Madrid
+Azpilicueta,405,Atlético de Madrid
+Carrasco,82276,Atlético de Madrid
+Marcos Llorente,22037,Atlético de Madrid
+De Paul,18142,Atlético de Madrid
+Lemar,82564,Atlético de Madrid
+Koke,12503,Atlético de Madrid
+Griezmann,12581,Atlético de Madrid
+Morata,8571,Atlético de Madrid
+Barrios,13283,Atlético de Madrid
+Söyüncü,26190,Atlético de Madrid
+Correa,20017,Atlético de Madrid
+Saúl,101062,Atlético de Madrid
+Memphis,25004,Atlético de Madrid
+Gomís,13285,Atlético de Madrid
+Galán,20173,Real Sociedad
+João Félix,20535,Barcelona
+Grbić,19830,Atlético de Madrid
+Riquelme,23741,Atlético de Madrid
+Lino,25825,Atlético de Madrid
+Kostis,403887,Atlético de Madrid
+André Ferreira,21869,Granada
+Miguel Rubio,20281,Granada
+Vallejo,19004,Granada
+Miquel,7562,Granada
+Neva,24302,Granada
+Sergio Ruiz,21348,Granada
+Melendo,23317,Granada
+Gumbau,16308,Granada
+Uzuni,28629,Granada
+Callejón,6159,Granada
+Samu,110597,Alavés
+Petrović,28631,Granada
+Ricard,20856,Granada
+Villar,23117,Granada
+Puertas,401521,Granada
+Zaragoza,43162,Granada
+Perea,200426,Granada
+Diédhiou,28034,Granada
+Adri López,20261,Granada
+Manafá,29211,Granada
+Víctor Díaz,6306,Granada
+Raúl Fernández,400093,Granada
+Bosch,27993,Granada
+Akhomach,28916,Villarreal
+Altimira,201479,Betis
+Mosquera,13178,Valencia
+Fraga,1040445,Real Sociedad
+Marchesín,25572,Celta de Vigo
+Luís Maximiano,20521,Almería
+Koné,41965,Almería
+Appiah,26855,Almería
+Kepa,19970,Real Madrid
+Nico Paz,205146,Real Madrid
+Raúl,26811,Osasuna
+Egiluz,104814,Athletic Club
+Alderete,29635,Getafe
+Kochen,304265,Barcelona
+Bastida,40270,Cádiz
+Witsel,70839,Atlético de Madrid
+Molina,29588,Atlético de Madrid
+Ander Sánchez,304271,Alavés
+Kike Salas,29773,Sevilla
+Nyland,26012,Sevilla
+Matías,205520,Sevilla
+Soro,23554,Granada
+De Frutos,22355,Rayo Vallecano
+De Tomás,19972,Rayo Vallecano
+Cárdenas,23213,Rayo Vallecano
+Camello,21812,Rayo Vallecano
+Kike Pérez,24419,Rayo Vallecano
+Martín Pascual,22711,Rayo Vallecano
+Sory Kaba,24509,Las Palmas
+Gorrín,28404,Las Palmas
+Merino,19027,Real Sociedad
+Zakharyan,1068321,Real Sociedad
+Ruly,23593,Celta de Vigo
+Piñeiro,41233,Real Madrid
+Maxi Gómez,20265,Cádiz
+Léo Baptistão,101283,Almería
+Mario González,15163,Granada
+Luna,208498,Mallorca
+Lukebakio,28144,Sevilla
+Bueno,24523,Girona
+Kebe,23996,Girona
+Yuri,12460,Athletic Club
+Dani García,300444,Athletic Club
+Guilherme Fernandes,59499,Betis
+Bartra,12397,Betis
+Bellerín,11288,Betis
+Yeremy Pino,15094,Villarreal
+Marcos Alonso,12428,Barcelona
+Cubarsí,3550,Barcelona
+Canós,25169,Valencia
+Mario,13289,Valencia
+Kike Barja,19024,Osasuna
+Stamatakis,1077665,Osasuna
+García,404787,Alavés
+Tenaglia,28633,Alavés
+Mendes,40342,Alavés
+Douvikas,40846,Celta de Vigo
+Dani Pérez,110330,Betis
+Ratiu,23548,Rayo Vallecano
+Hagi,27191,Alavés
+Amallah,49386,Valencia
+Yaremchuk,46002,Valencia
+Gonzalo,104319,Real Madrid
+Carmona,27655,Getafe
+Arambarri,84474,Getafe
+Tierney,25775,Real Sociedad
+Elustondo,202438,Real Sociedad
+Boyé,27250,Granada
+Solís,13644,Girona
+Perrone,55001,Las Palmas
+Nastasić,95720,Mallorca
+Cuéllar,1140,Mallorca
+João Cancelo,18141,Barcelona
+Iñigo Martínez,201038,Barcelona
+Iñaki Peña,24589,Barcelona
+Giménez,15204,Atlético de Madrid
+Reinildo,20525,Atlético de Madrid
+Sergio Ramos,2495,Sevilla
+Soumaré,28279,Sevilla
+Januzaj,91024,Sevilla
+Benavides,41452,Sevilla
+Ibra,209133,Sevilla
+Marcão,29165,Sevilla
+Lulo,104394,Sevilla
+Flores,12372,Sevilla
+Yeray,202395,Athletic Club
+Unai Hernández,41633,Barcelona
+Kike,29977,Betis
+Busto,404034,Betis
+Diao,304253,Betis
+Ristić,22909,Celta de Vigo
+Guaita,8475,Celta de Vigo
+Óscar Rodríguez,25297,Getafe
+Greenwood,22748,Getafe
+Dani Ceballos,15261,Real Madrid
+Romero,30000,Villarreal
+Montes,29990,Almería
+Mariano,301239,Sevilla
+Marvin,22714,Las Palmas
+Torrente,28907,Granada
+Álvaro Carreras,42864,Granada
+Weissman,28787,Granada
+Jastin García,13646,Girona
+Ropero,27824,Alavés
+Marciano,53010,Almería
+Mendy,28266,Real Madrid
+Claudio Bravo,442,Betis
+Kouamé,28205,Cádiz
+Chust,23943,Cádiz
+Sergi Guardiola,401141,Cádiz
+André Silva,70081,Real Sociedad
+Magunazelaia,12978,Real Sociedad
+Patrick,28999,Getafe
+Marco,27643,Atlético de Madrid
+Gismera,13467,Atlético de Madrid
+El Jebari,13634,Atlético de Madrid
+Niño,13559,Atlético de Madrid
+William Carvalho,70061,Betis
+Visus,24728,Betis
+Borja García,9405,Girona
+Carrillo,43216,Real Madrid
+Miguelito,41763,Mallorca
+Paco Sanz,13648,Almería
+Yarek,13476,Valencia
+Montero,13647,Alavés
+Brašanac,20098,Osasuna
+Peña,12123,Almería
+Guiu,13615,Barcelona
+Pau Víctor,23997,Barcelona
+Esnáider,27649,Getafe
+Aberdin,102701,Getafe
+Yuzún,13649,Mallorca
+Nianzou,25763,Sevilla
+Moleiro,27546,Las Palmas
+Fort,111189,Barcelona
+Ortiz,12821,Alavés
+Álex Morata,208877,Cádiz
+Njalla,403811,Cádiz
+Milla,22127,Getafe
+Jordi,26413,Getafe
+Mestre,1080602,Atlético de Madrid
+Fekir,82254,Betis
+Hugo Álvarez,13195,Celta de Vigo
+Javi Rodríguez,109910,Celta de Vigo
+Aramburu,110663,Real Sociedad
+Pascual,110325,Villarreal
+Rincón,40518,Athletic Club
+Güler,42745,Real Madrid
+Aznar,401528,Cádiz
+Damián,43010,Celta de Vigo
+Rachad,13652,Almería
+Sokratis,93305,Betis
+Parada,15172,Alavés
+Ocampo,46767,Cádiz
+Diakite,205443,Cádiz
+Yaakobishvili,306200,Girona
+Garrido,105707,Girona
+Mario Martín,104222,Real Madrid
+Abraham,206780,Villarreal
+Padilla,40501,Athletic Club
+Camus,24950,Valencia
+Theo Zidane,43219,Real Madrid
+Rafa,15147,Sevilla
+Coquelin,95573,Villarreal
+Mascaró,403742,Mallorca
+Marí,1047810,Valencia
+Ferrer,41331,Las Palmas
+Fiabema,111167,Real Sociedad
+Ayesa,22634,Real Sociedad
+Belaid,13653,Atlético de Madrid
+Tristán,23761,Granada
+Olabarrieta,209020,Athletic Club
+Jauregizar,304701,Athletic Club
+Javi Domínguez,18425,Celta de Vigo
+Arbol,108489,Granada
+Marcos,42672,Mallorca
+De Luis,24969,Real Madrid
+Vinícius Tobías,32927,Real Madrid
+Muñoz,208751,Alavés
+Ünal,20260,Getafe
+Capitas,41184,Sevilla
+Hormigo,404749,Sevilla
+Prim,13616,Barcelona
+Otorbi,209153,Valencia
+Bailly,301795,Villarreal
+Carlos Vicente,23520,Alavés
+Simeone,206664,Alavés
+Jailson,404689,Celta de Vigo
+Batalla,42348,Granada
+Arezo,26318,Granada
+Šviderský,47373,Almería
+Vitor Roque,33062,Barcelona
+Isaac,27826,Sevilla
+Agoumé,26627,Sevilla
+Dadie,201964,Real Sociedad
+Cardoso,30033,Betis
+Pleguezuelo,110331,Betis
+Piątkowski,43782,Granada
+Hongla,24318,Granada
+Leković,45960,Villarreal
+Quevedo,303792,Mallorca
+Monjonell,15141,Girona
+Vermeeren,45302,Atlético de Madrid
+Moldovan,13658,Atlético de Madrid
+Crespo,46013,Rayo Vallecano
+Yellu,13287,Getafe
+Eyong,30517,Cádiz
+Rupérez,403946,Real Sociedad
+Becker,78143,Real Sociedad
+Martín,304508,Real Sociedad
+Guedes,70068,Villarreal
+Iker Álvarez,18392,Villarreal
+Fabio,20263,Las Palmas
+Artero,12965,Girona
+Mejbri,40608,Sevilla
+Medenica,101485,Getafe
+Pablo Sáenz,41828,Granada
+Sangaré,13272,Granada
+Luka Romero,29384,Almería
+Radovanović,29441,Almería
+Maouassa,28068,Granada
+Marc Martínez,200549,Granada
+Bello,111256,Granada
+Pellistri,29650,Granada
+Corbeanu,29728,Granada
+Panichelli,52565,Alavés
+Peter,43217,Valencia
+Bruno Langa,27638,Almería
+Fornals,20043,Betis
+Juanmi,12409,Cádiz
+Ousou,46222,Cádiz
+Manquillo,101276,Celta de Vigo
+Allende,34544,Celta de Vigo
+Idumbo,209302,Sevilla
+Samassekou,25662,Cádiz
+Killane,11342,Las Palmas
+Jacobo,208662,Real Madrid
+Jóźwiak,700729,Granada
+Radonjić,21795,Mallorca
+Ilaix Moriba,26746,Getafe
+Herranz,208966,Getafe
+Véliz,34236,Sevilla
+Sintes,26879,Sevilla
+Bakambu,82887,Betis
+Álvaro,209170,Alavés
+Campaña,400412,Las Palmas
+Arguibide,304695,Osasuna
+Svensson,43118,Osasuna
+Gimeno,105887,Getafe
+Budesca,13594,Villarreal
+Faye,111194,Barcelona
+Osambela,110646,Osasuna
+Toni Villa,21033,Girona
+Risco,13659,Getafe
+Tallal,208967,Getafe
+Raihani,13621,Atlético de Madrid
+Jeremy,208673,Getafe
+Courtois,13727,Real Madrid
+Huarte,27771,Osasuna
+Abril,304284,Valencia
+Rodelas,404806,Granada
+Brau,15160,Granada
+Nando,402355,Cádiz
+Lago,41300,Celta de Vigo
+Javi Rueda,200150,Celta de Vigo
+César Fernández,43004,Celta de Vigo

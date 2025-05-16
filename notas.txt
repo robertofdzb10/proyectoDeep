@@ -1,0 +1,8 @@
+Invoke-RestMethod -Uri http://localhost:8001/match_predict `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body (@{
+      local   = "Real Madrid"
+      visitor = "Barcelona"
+      date    = "2025-05-10"
+  } | ConvertTo-Json)

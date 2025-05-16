@@ -1,0 +1,9 @@
+setup.py
+api/__init__.py
+api/model1_api.py
+api/model2_api.py
+api/schemas.py
+proyectoDeep.egg-info/PKG-INFO
+proyectoDeep.egg-info/SOURCES.txt
+proyectoDeep.egg-info/dependency_links.txt
+proyectoDeep.egg-info/top_level.txt

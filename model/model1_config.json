@@ -1,0 +1,14 @@
+{
+  "model_path": "..\\models\\model1.pth",
+  "num_teams": 42,
+  "feature_dim": 2,
+  "team_embed_dim": 12,
+  "convlstm_hid": 24,
+  "convlstm_kernel": [
+    3,
+    3
+  ],
+  "fc_hid": 48,
+  "drop": 0.2,
+  "time_steps": 10
+}

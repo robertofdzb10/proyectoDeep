@@ -1,0 +1,17 @@
+{
+  "model_path": "..\\models\\model5.pth",
+  "num_teams": 26,
+  "team_dim": 16,
+  "num_arb": 27,
+  "arb_dim": 8,
+  "num_comp": 1,
+  "comp_dim": 5,
+  "num_players": 704,
+  "player_dim": 32,
+  "pad_idx": 704,
+  "seq_in": 5,
+  "lstm_hid": 256,
+  "num_odds": 3,
+  "fc_hid": 64,
+  "drop": 0.2
+}

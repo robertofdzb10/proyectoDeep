@@ -47,12 +47,14 @@
     }
     .message.user { justify-content: flex-end; }
     .message.bot  { justify-content: flex-start; }
+    .message.json { justify-content: flex-start; } /* nuevo */
     .bubble {
       max-width: 70%;
       padding: 10px 14px;
       border-radius: 12px;
       line-height: 1.4;
       white-space: pre-wrap;
+      word-wrap: break-word;
     }
     .user .bubble {
       background: var(--user);
@@ -61,6 +63,12 @@
     .bot .bubble {
       background: var(--bot);
       border-bottom-left-radius: 2px;
+    }
+    .json .bubble {
+      background: #eef6ff;
+      border-left: 4px solid var(--accent);
+      font-family: monospace;
+      font-size: 0.9em;
     }
     .input-area {
       border-top: 1px solid var(--border);
@@ -130,14 +138,22 @@
         body: JSON.stringify({ input: text })
       });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-      const { response, error } = await res.json();
+      const { response, context_jsonl, error } = await res.json();
+
       if (error) {
         appendMessage('Error: ' + error);
       } else {
-        appendMessage(response);
+        // Mensaje principal del agente
+        appendMessage(response, 'bot');
+
+        // Si existe el JSON de contexto, lo mostramos formateado
+        if (context_jsonl) {
+          const pretty = JSON.stringify(context_jsonl, null, 2);
+          appendMessage(pretty, 'json');
+        }
       }
     } catch (err) {
-      appendMessage('No se pudo conectar al servidor.');
+      appendMessage('No se pudo conectar al servidor.', 'bot');
       console.error(err);
     } finally {
       btnEl.disabled = false;
@@ -151,7 +167,7 @@
   });
 
   // Mensaje de bienvenida
-  appendMessage('¡Hola! Soy tu asistente de predicciones de fútbol. ¿En qué puedo ayudarte hoy?');
+  appendMessage('¡Hola! Soy tu asistente de predicciones de fútbol. ¿En qué puedo ayudarte hoy?', 'bot');
 </script>
 
 </body>

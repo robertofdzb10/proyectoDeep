@@ -25,7 +25,11 @@ def root():
 def predict(req: AgentRequest):
     # Llamamos a tu función que invoca al agente
     try:
-        reply = chat_with_agent(req.input)
-        return {"response": reply}
+        # chat_with_agent ahora devuelve (texto, jsonl_context)
+        reply_text, context_jsonl = chat_with_agent(req.input)
+        return {
+            "response":    reply_text,
+            "context_jsonl": context_jsonl
+        }
     except Exception as e:
         return {"error": str(e)}

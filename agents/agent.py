@@ -334,7 +334,10 @@ def predict_match_result(match_input: str) -> str:
         resp.raise_for_status()
         model_resp = resp.json()
         print("🔍 [DEBUG] Router respondió:", model_resp)
- 
+
+        # ← Guardamos la respuesta cruda en la variable global
+        global last_model_response
+        last_model_response = model_resp.copy()
 
         # Saber qué modelo respondió
         routed_to = model_resp.pop("routed_to", "unknown")
@@ -415,6 +418,10 @@ def create_football_agent():
 # Interfaz de chat
 # --------------------------
 
+# Creamos el agente y un "cache" para la última respuesta cruda
+football_agent = create_football_agent()
+last_model_response: dict = {}     # ← variable global para guardar el JSON crudo
+
 def chat_with_agent(user_input: str, agent_executor=None, thread_id: str = "default"):
     """
     Función para interactuar con el agente.
@@ -426,7 +433,12 @@ def chat_with_agent(user_input: str, agent_executor=None, thread_id: str = "defa
     response = agent_executor.invoke({"input": user_input})
 
     # Extraer y devolver la respuesta
-    return response.get("output", "")
+    # Extraer el texto formateado
+    output_text = response.get("output", "")
+
+    # Recuperar la última respuesta cruda que guardamos en predict_match_result
+    global last_model_response
+    return output_text, last_model_response
 
 # --------------------------
 # Chatear con agente
